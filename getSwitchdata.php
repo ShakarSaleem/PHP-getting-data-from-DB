@@ -1,9 +1,9 @@
 <?php
 
 $servername = "localhost";
-$username = "root";
-$password = "password";
-$dbname = "switchdata";
+$username = "NAME OF USER FOR THE THE DATABASE";
+$password = "PASSWORD OF USER FOR THE THE DATABASE";
+$dbname = "NAME OF DATABASE USED";
 
 
 //create connection
@@ -15,13 +15,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 		}
 		echo "connected successfully";
 
-$sql = "SELECT sw, p1, p3, p3,p4 FROM switchTable";
+$sql = "SELECT ROW1,ROW2... FROM tableName";
 $result = mysqli_query($conn,$sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "sw: " . $row["sw"]. " - p1: " . $row["p1"]. " - p2: " . $row["p2"]. " - p3: " . $row["p3"]. " - p4: " . $row["p4"]. "<br>";
+        echo "COLUMNNAME " . $row["COLUMNNAME"]. " COLUMNNAME2: " . $row["COLUMNNAME2"]. "<br>";
     }
 } else {
     echo "0 results";
